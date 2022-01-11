@@ -61,7 +61,7 @@ body {
     transition: all 0.3s ease;
     line-height: 1.1;
   }
-  
+
   .btn:hover {
     background-color: #e23e3e;
     opacity: 1;
@@ -86,7 +86,7 @@ body {
     transition: all 0.3s ease;
     line-height: 1.1;
   }
-  
+
   .btn:hover {
     background-color: #e23e3e;
     opacity: 1;
@@ -111,7 +111,7 @@ body {
     transition: all 0.3s ease;
     line-height: 1.1;
   }
-  
+
   .btn:hover {
     background-color: #e23e3e;
     opacity: 1;
@@ -360,4 +360,15 @@ header .nav-links li:last-child {
   color: #fff;
   font-size: 3rem;
   text-align: center;
+}
+
+.loader-container {
+  display: flex;
+  justify-content: center;
+  margin: 100px;
+}
+.text-no-results {
+  display: inline-block;
+  font-size: 2.0rem;
+  margin: 70px;
 }

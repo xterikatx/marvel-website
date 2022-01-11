@@ -2,15 +2,22 @@ import axios from "axios";
 import { useCallback, useEffect, useState } from "react";
 import { ResultCard } from "../../components/ResultCard";
 import api from "../../api";
+import { Loader } from "../../components/Loader";
+import { NoResults } from "../NoResults";
 
 export const Search = () => {
   const [query, setQuery] = useState("");
   const [datas, setDatas] = useState([]);
-
+  const [loading, setLoading] = useState(false);
+  console.log(query.length);
   const fetchApi = useCallback(async () => {
-    const { data } = await api.get(`comics?title=${query}`);
+    setLoading(true);
+    const { data } = await api.get(`comics?title=${query}&noVariants=false`);
+    if (datas?.length === 0) setLoading(false);
+    setLoading(false);
+
     setDatas(data);
-  }, [query]);
+  }, [datas?.length, query]);
 
   useEffect(() => {
     fetchApi();
@@ -33,6 +40,16 @@ export const Search = () => {
               />
             </form>
           </div>
+
+          {!!loading &&
+            datas.data?.results.length === 0 &&
+            !(query.length === 0) && (
+              <div className="loader-container">
+                <Loader visible={loading} />
+              </div>
+            )}
+
+          {!loading && datas.data?.results.length === 0 && <NoResults />}
 
           {datas.data?.results?.length > 0 && (
             <ul className="results">
