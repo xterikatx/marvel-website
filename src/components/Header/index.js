@@ -1,14 +1,14 @@
 import { Link } from 'react-router-dom';
-import { Container, InnerContent, Header as HeaderContainer, Brand } from './styles';
 
 export const Header = () => (
-  <HeaderContainer>
-    <Container>
-      <InnerContent>
-        <Brand>
+  <header>
+    <div className="container">
+      <div className="inner-content">
+        <div className="brand">
           <Link to="/">MARVEL</Link>
-        </Brand>
-      </InnerContent>
-    </Container>
-  </HeaderContainer>
+        </div>
+      
+      </div>
+    </div>
+  </header>
 );
