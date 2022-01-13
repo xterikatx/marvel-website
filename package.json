@@ -24,7 +24,7 @@
   },
   "scripts": {
     "start": "react-scripts start -- --config=jest.config.js",
-    "build": "react-scripts build",
+    "build": "CI=false && react-scripts build",
     "test": "jest --config ./jest.config.js",
     "eject": "react-scripts eject",
     "test:watch": "npm run test -- --watch"
