@@ -23,8 +23,8 @@ export const Search = () => {
 
   useEffect(() => {
     fetchApi();
+    console.log("opa");
   }, [fetchApi, query]);
-  console.log(datas.data?.results)
   return (
     <div className="add-page">
       <div className="container">

@@ -1,9 +1,12 @@
-import { useState } from "react";
+import { useContext, useEffect, useState } from "react";
 import { Link } from "react-router-dom";
+import { GlobalContext } from "../../context/GlobalState";
 import { Modal } from "../Modal";
 
 export const ResultCard = ({ comic }) => {
   const [popUp, setPopUp] = useState(false);
+
+  const { addComicToFav, fav } = useContext(GlobalContext);
 
   return (
     <div className="result-card">
@@ -31,6 +34,13 @@ export const ResultCard = ({ comic }) => {
 
           <button className="btn" onClick={setPopUp} disabled={!!popUp}>
             View details
+          </button>
+          <button
+            className="btn"
+            onClick={() => addComicToFav(comic)}
+            disabled={!!fav.find((o) => o.id === comic.id)}
+          >
+            like ❤️
           </button>
         </div>
       </div>
