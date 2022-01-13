@@ -4,7 +4,6 @@ import { GlobalContext } from "../../context/GlobalState";
 
 export function Favs() {
   const { fav } = useContext(GlobalContext);
-  console.log(fav);
   return (
     <div className="comic-page">
     <div className="container">

@@ -1,7 +1,6 @@
 export default (state, action) => {
   switch (action.type) {
     case "ADD_COMIC_TO_FAV":
-      console.log("cheou", state);
       return {
         ...state,
         fav: [action.payload, ...state.fav],
