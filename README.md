@@ -1,5 +1,6 @@
 ## MARVEL WEBSITE CRIADO COM REACTJS
 
+[LINK DA VERSÃO HOSPEDADA AQUI](https://marvel-website.vercel.app/)
 ### Uso
 
 ```OBS: tenha em mente que deve-se ter instalado Node.js em sua máquina.```
