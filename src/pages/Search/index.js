@@ -1,4 +1,3 @@
-import axios from "axios";
 import { useCallback, useEffect, useState } from "react";
 import { ResultCard } from "../../components/ResultCard";
 import api from "../../api";
@@ -9,12 +8,15 @@ export const Search = () => {
   const [query, setQuery] = useState("");
   const [datas, setDatas] = useState([]);
   const [loading, setLoading] = useState(false);
-  console.log(query.length);
+
   const fetchApi = useCallback(async () => {
     setLoading(true);
     const { data } = await api.get(`comics?title=${query}&noVariants=false`);
-    if (datas?.length === 0) setLoading(false);
-    setLoading(false);
+
+    setTimeout(() => {
+      if (datas?.length === 0) setLoading(false);
+      setLoading(false);
+    }, 2000);
 
     setDatas(data);
   }, [datas?.length, query]);
@@ -22,7 +24,7 @@ export const Search = () => {
   useEffect(() => {
     fetchApi();
   }, [fetchApi, query]);
-
+  console.log(datas.data?.results)
   return (
     <div className="add-page">
       <div className="container">
@@ -31,7 +33,7 @@ export const Search = () => {
             <form>
               <input
                 type="text"
-                placeholder="Procure por um quadrinho :)"
+                placeholder="Look for a comic... :)"
                 value={query}
                 onChange={(event) => {
                   event.preventDefault();

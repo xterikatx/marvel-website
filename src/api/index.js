@@ -9,7 +9,7 @@ const HASH = MD5(
 ).toString();
 
 const api = axios.create({
-  baseURL: "https://gateway.marvel.com/v1/public/",
+  baseURL: "https://gateway.marvel.com:443/v1/public/",
   params: {
     apikey: process.env.REACT_APP_PUBLIC_KEY_API,
     ts: TIMESTAMP,

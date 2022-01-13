@@ -1,11 +1,10 @@
 import { useState } from "react";
+import { Link } from "react-router-dom";
 import { Modal } from "../Modal";
 
 export const ResultCard = ({ comic }) => {
   const [popUp, setPopUp] = useState(false);
 
-  console.log(comic);
-  console.log(`${comic.thumbnail.path}.${comic.thumbnail.extension}`);
   return (
     <div className="result-card">
       <div className="poster-wrapper">
@@ -26,14 +25,16 @@ export const ResultCard = ({ comic }) => {
         </div>
 
         <div className="controls">
-          <button className="btn">Selecionar </button>
+          <Link to="/select-comic">
+            <button className="btn">Select </button>
+          </Link>
 
-          <button className="btn" onClick={setPopUp}>
-            Exibir detalhes
+          <button className="btn" onClick={setPopUp} disabled={!!popUp}>
+            View details
           </button>
         </div>
       </div>
-      {popUp && <Modal setPopUp={setPopUp} />}
+      {popUp && <Modal setPopUp={setPopUp} comicID={comic.id} />}
     </div>
   );
 };

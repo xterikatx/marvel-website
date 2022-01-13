@@ -22,3 +22,9 @@ ou
 ```
 npm start
 ```
+
+
+## Observações 
+
+### Algumas requisições para detalhes do quadrinho selecionado, a descrição (description) vem como "null", mesmo que o site da marvel tenha essas informações! :/
+
