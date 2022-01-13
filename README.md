@@ -24,6 +24,12 @@ npm start
 ```
 
 
+- Para rodar os testes, abre o terminal e digite: 
+
+```
+yarn test:watch
+```
+
 ## Observações 
 
 ### Algumas requisições para detalhes do quadrinho selecionado, a descrição (description) vem como "null", mesmo que o site da marvel tenha essas informações! :/
