@@ -23,7 +23,6 @@ export const Search = () => {
 
   useEffect(() => {
     fetchApi();
-    console.log("opa");
   }, [fetchApi, query]);
   return (
     <div className="add-page">
