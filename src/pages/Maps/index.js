@@ -102,7 +102,6 @@ export function MyMapComponent() {
               <label htmlFor="name">Your name</label>
               <input
                 id="name"
-                placeholder="Enter your name"
                 value={name}
                 onChange={(event) => setName(event.target.value)}
               />
@@ -111,7 +110,6 @@ export function MyMapComponent() {
             <div className="input-block">
               <label htmlFor="address">Address</label>
               <AsyncSelect
-                placeholder="Enter your address..."
                 classNamePrefix="filter"
                 cacheOptions
                 loadOptions={loadOptions}
